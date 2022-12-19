@@ -1,0 +1,31 @@
+
+<%- include("partials/header"); -%>
+<body style="background-image: url('/images/img3.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;">
+
+  <div class="container" style="margin-top:30px; padding-bottom: 30px; padding-top: 20px;  background: rgba(255, 255, 255, 0.32);
+  
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.3px);
+  -webkit-backdrop-filter: blur(5.3px);
+  border: 1px solid rgba(255, 255, 255, 0.2);" >
+    
+    <h1>Home</h1>
+    <p> <%= startingContent %> </p>
+
+
+  <%  posts.forEach(function(post){ %>
+
+    <h1><%=post.title%></h1>
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+    </p>
+
+
+    <% }) %>
+
+
+<%- include("partials/footer"); -%>
