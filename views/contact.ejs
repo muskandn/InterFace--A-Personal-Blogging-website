@@ -1,6 +1,62 @@
-<%- include("partials/header"); -%>
-<body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Daily Journal</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <!-- <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init('U2MKQ3wQt4fZB4foH');
+   })();
+</script> -->
+
+  <nav class="navbar navbar-default">
     <div class="container">
-    <h1>Contact</h1>
-    <p> <%= contactContent %> </p>
-<%- include("partials/footer"); -%>
+      <div class="navbar-header">
+        <p class="navbar-brand" style="color: white;">InterFace</p>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="home" ><a href="/home" style="color: rgb(66, 65, 65)">HOME</a></li>
+          <li id="compose"><a href="/compose" style="color: rgb(66, 65, 65)">COMPOSE</a></li>
+          <li id="about"><a href="/about" style="color: rgb(66, 65, 65)">ABOUT US</a></li>
+          <li id="contact"><a href="/contact" style="color: rgb(66, 65, 65)">CONTACT US</a></li>
+          <!-- <li id="contact"><a href="/contact">CONTACT US</a></li> -->
+
+        </ul>
+    </div>
+  </nav>
+
+
+<body style="background-image: url('/images/img17.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+background-position: center;">
+    <div class="form-container-welcome">
+        <form action="" id="form">
+            <h3 style="color: rgb(20, 20, 61);">Contact Us</h3>
+            <!-- <i class="fas fa-user"></i> -->
+            <input id="name" type="text" placeholder="username">
+            <!-- <i class="fa-solid fa-envelope"></i> -->
+            <input id="email" type="email" placeholder="email">
+            <!-- <i class="fas fa-lock"></i> -->
+            <textarea id="message" name="password" id="" cols="30" rows="10" placeholder="Message"></textarea>
+            <input class="msg" style="background: linear-gradient(90deg, rgb(177, 138, 11), rgb(44, 24, 24));" type="submit" value="Send Message" onclick="sendmail()">
+            <!-- <button onclick="sendmail()">send</button> -->
+        </form>
+    </div>
+</div>
+<div class="footer-padding"></div>
+  <div class="footer">
+    <p>Copyright 2022 @muskan_dn</p>
+  </div>
+</div>
+<!-- <script src="app.js"></script> -->
+</body>
+</html>

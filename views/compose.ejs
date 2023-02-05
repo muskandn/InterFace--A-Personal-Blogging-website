@@ -9,6 +9,13 @@ background-size: cover;">
     <h1>Compose</h1>
     <form class="" action="/compose" method="post">
       <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" name="author" style="background: rgba(255, 255, 255, 0.49);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.7px);
+        -webkit-backdrop-filter: blur(6.7px);
+        border: 1px solid rgba(255, 255, 255, 0.2);">
+        
         <label>Title</label>
         <input class="form-control" type="text" name="postTitle" style="background: rgba(255, 255, 255, 0.49);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -23,11 +30,15 @@ background-size: cover;">
         -webkit-backdrop-filter: blur(6.7px);
         border: 1px solid rgba(255, 255, 255, 0.2);"></textarea>
       </div>
-      <button type="submit" name="button" style="background: rgba(255, 255, 255, 0.49);
+      <button type="submit" name="button" 
+      style="background: rgba(255, 255, 255, 0.49);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(0.2px);
       -webkit-backdrop-filter: blur(1.7px);
-      border: 1px solid rgba(255, 255, 255, 0.2);" class="btn btn-primary">Publish</button>
+      border: 1px solid rgba(255, 255, 255, 0.2);" 
+      class="btn btn-primary">
+      Publish
+    </button>
     </form>
 
 <%- include("partials/footer"); -%>
