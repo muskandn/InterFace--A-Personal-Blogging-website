@@ -19,13 +19,13 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <p class="navbar-brand" style="color: white;">InterFace</p>
+        <p class="navbar-brand" style="color: rgb(0, 0, 0);">InterFace</p>
       </div>
         <ul class="nav navbar-nav navbar-right">
-          <li id="home" ><a href="/home" style="color: rgb(66, 65, 65)">HOME</a></li>
-          <li id="compose"><a href="/compose" style="color: rgb(66, 65, 65)">COMPOSE</a></li>
-          <li id="about"><a href="/about" style="color: rgb(66, 65, 65)">ABOUT US</a></li>
-          <li id="contact"><a href="/contact" style="color: rgb(66, 65, 65)">CONTACT US</a></li>
+          <li id="home" ><a href="/" style="color: rgb(44, 43, 43)">HOME</a></li>
+          <li id="compose"><a href="/compose" style="color: rgb(44, 43, 43)">COMPOSE</a></li>
+          <li id="about"><a href="/about" style="color: rgb(44, 43, 43)">ABOUT US</a></li>
+          <li id="contact"><a href="/contact" style="color: rgb(44, 43, 43)">CONTACT US</a></li>
           <!-- <li id="contact"><a href="/contact">CONTACT US</a></li> -->
 
         </ul>
@@ -39,7 +39,7 @@ background-attachment: fixed;
 background-size: cover;
 background-position: center;">
     <div class="form-container-welcome">
-        <form action="" id="form">
+        <form action="" id="form" onsubmit="sendEmail(); reset(); return false">
             <h3 style="color: rgb(20, 20, 61);">Contact Us</h3>
             <!-- <i class="fas fa-user"></i> -->
             <input id="name" type="text" placeholder="username">
@@ -47,8 +47,8 @@ background-position: center;">
             <input id="email" type="email" placeholder="email">
             <!-- <i class="fas fa-lock"></i> -->
             <textarea id="message" name="password" id="" cols="30" rows="10" placeholder="Message"></textarea>
-            <input class="msg" style="background: linear-gradient(90deg, rgb(177, 138, 11), rgb(44, 24, 24));" type="submit" value="Send Message" onclick="sendmail()">
-            <!-- <button onclick="sendmail()">send</button> -->
+            <!-- <input class="msg" style="background: linear-gradient(90deg, rgb(177, 138, 11), rgb(44, 24, 24));" type="submit" value="Send Message" onclick="sendmail()"> -->
+            <button onclick="sendmail()">send</button>
         </form>
     </div>
 </div>
@@ -58,5 +58,27 @@ background-position: center;">
   </div>
 </div>
 <!-- <script src="app.js"></script> -->
+<!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+  function sendEmail(){
+    Email.send({
+      Host : "smtp.elasticemail.com",
+      Username : "muskandn02@gmail.com",
+      Password : "E4C22C1A23134078CDABBA44B29B54050BE5",
+      To : "muskandn02@gmail.com",
+      From : document.getElementById("email").value,
+      Subject : "This is the subject",
+      Body : "And this is the body"
+    }).then(
+    message => alert(message)
+  );
+  } -->
+
+<!-- reason of not working
+  I also encountered the same issue while using it. I realised if the value of from is different 
+  from the value for username, it gives of that error. so i realised or rather presumed since its 
+  not actually sent from the users email that seems reasonable to occur so if you need to get the 
+  users email just send it together with the body -->
+</script>
 </body>
 </html>

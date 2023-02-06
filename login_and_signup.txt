@@ -1,0 +1,3 @@
+ux is already there
+but neither login or signup is working 
+as i think no need to use login, verification n all for this blogging page

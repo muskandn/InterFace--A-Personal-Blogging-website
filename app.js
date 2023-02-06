@@ -6,15 +6,15 @@ const ejs = require("ejs");
 const mongoose = require('mongoose');
 
 
-const dblogin="mongodb+srv://muskandn:blog123@cluster0.zc55oww.mongodb.net/blog123?retryWrites=true&w=majority"
-mongoose.connect(dblogin,{
-  useNewUrlParser: true,
-  useCreateIndex:true,
-  useUnifiedTopology: true,
-  useFindAndModify: false
-}).then(()=>{
-  console.log("connection successful");
-}).catch((err)=>console.log("no connection"))
+// const dblogin="mongodb+srv://muskandn:blog123@cluster0.zc55oww.mongodb.net/blog123?retryWrites=true&w=majority"
+// mongoose.connect(dblogin,{
+//   useNewUrlParser: true,
+//   useCreateIndex:true,
+//   useUnifiedTopology: true,
+//   useFindAndModify: false
+// }).then(()=>{
+//   console.log("connection successful");
+// }).catch((err)=>console.log("no connection"))
 
 
 
@@ -34,12 +34,12 @@ app.use(express.static("public"));
 
 
 //articles database**********************************************************************************************************
-// var db = mongoose.connect('mongodb://127.0.0.1:27017/roster');
+var db = mongoose.connect('mongodb://127.0.0.1:27017/roster');
 
-// // testing connectivity
-// mongoose.connection.once('connected', function() {
-// 	console.log("Database connected successfully")
-// });
+// testing connectivity
+mongoose.connection.once('connected', function() {
+	console.log("Database connected successfully")
+});
 
 const postSchema = {
   author:{
@@ -64,41 +64,41 @@ const Post = mongoose.model("Post", postSchema);
 //   console.log('Login database connected successfully')
 // })
 
-const personSchema={
-  name:{
-    type: String,
-    required:true
-  },
-  ph:{
-    type: Number,
-    required:true
-  },
-  interest:{
-    type: String,
-    required:true
-  },
-  email:{
-    type: String,
-    required:true
-  },
-  pass:{
-    type: String,
-    required:true
-  }
-};
+// const personSchema={
+//   name:{
+//     type: String,
+//     required:true
+//   },
+//   ph:{
+//     type: Number,
+//     required:true
+//   },
+//   interest:{
+//     type: String,
+//     required:true
+//   },
+//   email:{
+//     type: String,
+//     required:true
+//   },
+//   pass:{
+//     type: String,
+//     required:true
+//   }
+// };
 
-const Person=mongoose.model("Person",personSchema);
+// const Person=mongoose.model("Person",personSchema);
 
 
 
 //***************************************************************************************************************************** */
 app.get('/',function(req,res){
-  res.render("welcomePage")
+  res.render("home")
 })
 
-app.get('/signup',function(req,res){
-  res.render("signup")
-})
+// app.get('/signup',function(req,res){
+//   res.render("signup")
+// })
 
 // app.post('/signup',function(req,res){
 //   const person=new Person({
@@ -126,11 +126,11 @@ app.get('/signup',function(req,res){
 // })
 
 
-app.get("/home", function(req, res){
+app.get("/", function(req, res){
 
   Post.find({}, function(err, posts){
     res.render("home", {
-      startingContent: homeStartingContent,
+      // startingContent: homeStartingContent,
       posts: posts
       });
   });
@@ -150,7 +150,7 @@ app.post("/compose", function(req, res){
 
   post.save(function(err){
     if (!err){
-        res.redirect("/home");
+        res.redirect("/");
     }
   });
 });
