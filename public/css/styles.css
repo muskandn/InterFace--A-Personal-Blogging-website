@@ -87,9 +87,13 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 
 .form-container,.form-container-welcome form h3{
   font-size: 30px;
-  padding: 10px 0;
+  padding: 10px 0 0px 0;
   color: #ccc;
   letter-spacing: 3px;
+}
+.form-container-welcome form h8{
+  
+  padding: 0px 0 5px 0;
 }
 
 .form-container,.form-container-welcome form i{
@@ -132,7 +136,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 30px;
   border-radius: 50px;
 }
-.form-container-welcome a{
+/* .form-container-welcome a{
   display: block;
   width: 52%;
   height: 30px;
@@ -141,7 +145,7 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 30px;
   border-radius: 50px;
   padding: 10px 0 0 0;
-}
+} */
 
 
 .container .contact-us{
@@ -195,9 +199,50 @@ border: 1px solid rgba(255, 255, 255, 0.2);
 
 
 
+.icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:20rem;
+  height: 30px;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgb(241, 148, 9), rgb(37, 13, 7));
+  border-radius: 50px;
+
+}
+.icons_total{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 2rem;
+  margin-top: 25px;
+  padding-left: 5.5rem;
+}
 
 
+.icons_total .icons a{
+  color:  rgba(255,255,255,.7);
+  text-align: center;
+  padding-right: 1rem;
 
+}
+.icons_total .icons a:hover{
+  letter-spacing: 4px;
+  text-decoration: none;
+}
+
+.icon{
+  padding-right: 1rem;
+}
+
+.map{
+  padding-top: 3rem;
+
+}
+.inside-map{
+  height: 30rem;
+  width: 50rem;
+}
 @media screen and (max-width: 768px) 
 {
   .form-container-welcome{
