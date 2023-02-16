@@ -13,17 +13,20 @@ background-size: cover;">
   border: 1px solid rgba(255, 255, 255, 0.2);" >
     
     <h1>Home</h1>
-    <p>Lacus vel facilisis volutpat est velit egestas dui id ornare. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing. Et tortor consequat id porta nibh. Congue eu consequat ac felis donec et odio pellentesque diam. Condimentum lacinia quis vel eros donec. Id cursus metus aliquam eleifend mi in nulla posuere sollicitudin. At varius vel pharetra vel turpis nunc eget. Mollis aliquam ut porttitor leo a diam sollicitudin tempor.Proin nibh nisl condimentum id. Laoreet non curabitur gravida arcu ac tortor dignissim convallis. Netus et malesuada fames ac turpis egestas maecenas. Eget arcu dictum varius duis at consectetur. Sit amet aliquam id diam maecenas ultricies mi. Mauris nunc congue nisi vitae suscipit tellus mauris. Quam nulla porttitor massa id neque aliquam vestibulum. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Orci phasellus egestas tellus rutrum tellus 
-      pellentesque. </p>
+    <p>Create a beautiful blog that fits your style. Save the moments that matter. Blogger lets you safely store thousands of posts, photos, and more with Google. Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Discover why millions of people have published their passions here. </p>
 
-
-      <%  posts.forEach(function(post){ %>
-        <h1><%=post.title%></h1>
-        <p>
-        <%=post.content.substring(0, 100) + " ..."%>
-        <a href="/posts/<%=post._id%>">Read More</a>
-        </p>
-        <% }) %>
+      <a  class="compose" href="compose">Compose</a>
+<%  posts.forEach(function(post){ %>
+  <div style="display: flex;">
+    <h1><%=post.title%></h1>
+  <h5 style="color: rgb(75, 78, 80); padding-top: 33.5px; padding-left: 5px;"><%=post.name%></h5>
+  </div>
+  
+  <p>
+  <%=post.content.substring(0, 100) + " ..."%>
+  <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+  <% }) %> 
 
 
 <%- include("partials/footer"); -%>

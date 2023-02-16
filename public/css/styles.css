@@ -157,7 +157,15 @@ border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
 
 }
+.container .compose{
+  display: block;
+  width:20rem;
+  height: 30px;
+  cursor: pointer;
+  background: linear-gradient(90deg, rgb(5, 30, 16), rgb(82, 157, 210));
+  border-radius: 50px;
 
+}
 .container a{
   color:  rgba(255,255,255,.7);
   text-align: center;
